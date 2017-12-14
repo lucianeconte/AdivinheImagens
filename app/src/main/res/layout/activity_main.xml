@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="20dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="40dp"
+    android:background="#FFFFFF"
+    tools:context="br.com.adivinheimagens.appluciane.adivinheimagens.MainActivity">
+
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:id="@+id/img1"
+            android:background="@drawable/banana"
+            android:layout_below="@+id/textViewPontos"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:id="@+id/img2"
+            android:background="@drawable/flor"
+            android:layout_centerVertical="true"
+            android:layout_alignRight="@+id/img4" />
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:id="@+id/img3"
+            android:background="@drawable/gato"
+            android:layout_alignTop="@+id/img1"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:id="@+id/img4"
+            android:background="@drawable/morango"
+            android:layout_above="@+id/bt_reiniciar"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:id="@+id/img5"
+            android:background="@drawable/boi"
+            android:layout_above="@+id/bt_reiniciar"
+            android:layout_alignLeft="@+id/img6"
+            android:layout_alignStart="@+id/img6" />
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:id="@+id/img6"
+            android:background="@drawable/bola"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/img3"
+            android:layout_alignStart="@+id/img3" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/texto_reiniciar"
+            android:id="@+id/bt_reiniciar"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Pontos = 0"
+            android:id="@+id/textViewPontos"
+            android:textColor="@color/colorPrimaryDark"
+            android:paddingBottom="5dp"
+            android:gravity="center_horizontal"
+            android:paddingTop="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
+
+

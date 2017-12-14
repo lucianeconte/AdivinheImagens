@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Adivinhe Imagens</string>
+    <string name="texto_iniciar">Iniciar</string>
+    <string name="action_configuracoes">Configurações</string>
+    <string name="action_sair">Sair</string>
+    <string name="texto_reiniciar">Começar novamente</string>
+    <string name="texto_nome_usuario">Nome do Usuário</string>
+    <string name="texto_boas_vindas">Olá Victor! Vamos adivinhar as imagens?</string>
+    <string name="texto_salvar">Salvar</string>
+    <string name="texto_Animais">Animais</string>
+    <string name="texto_Comida">Comida</string>
+    <string name="texto_Outros">Outros</string>
+</resources>

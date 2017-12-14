@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.adivinheimagens.appluciane.adivinheimagens.InicialActivity">
+
+    <include
+        android:id="@+id/toolbar_principal"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/texto_iniciar"
+            android:id="@+id/bt_iniciar"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.44"
+            android:layout_below="@+id/radioGroupID"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/texto_boas_vindas"
+            android:id="@+id/texto_boasVindas"
+            android:textColor="@color/colorPrimaryDark"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="76dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Escolha as imagens para adivinhar:"
+            android:id="@+id/textView2"
+            android:textColor="#000000"
+            android:layout_above="@+id/radioGroupID"
+            android:layout_alignLeft="@+id/radioGroupID"
+            android:layout_alignStart="@+id/radioGroupID" />
+
+        <RadioGroup
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/radioGroupID"
+            android:layout_centerVertical="true"
+            android:layout_alignRight="@+id/bt_iniciar"
+            android:layout_alignEnd="@+id/bt_iniciar">
+
+            <RadioButton
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="@string/texto_Animais"
+                android:id="@+id/rbAnimais"
+                android:checked="true"
+                android:layout_alignLeft="@+id/rbAnimais"
+                android:layout_alignStart="@+id/rbAnimais"
+                android:textColor="#000000"
+                android:layout_marginTop="10dp" />
+
+            <RadioButton
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="@string/texto_Comida"
+                android:id="@+id/rbComida"
+                android:checked="false"
+                android:layout_marginRight="26dp"
+                android:layout_toLeftOf="@+id/bt_iniciar"
+                android:layout_toStartOf="@+id/bt_iniciar"
+                android:layout_marginTop="1dp"
+                android:textColor="#000000" />
+
+            <RadioButton
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="@string/texto_Outros"
+                android:id="@+id/rbOutros"
+                android:checked="false"
+                android:layout_alignLeft="@+id/rb_Animais"
+                android:layout_alignStart="@+id/rb_Animais"
+                android:textColor="#000000"
+                android:layout_marginTop="4dp" />
+        </RadioGroup>
+
+    </RelativeLayout>
+
+</LinearLayout>
