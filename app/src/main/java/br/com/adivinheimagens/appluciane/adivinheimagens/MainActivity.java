@@ -68,7 +68,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void mostrarImagens(){
         Bundle extras = getIntent().getExtras();
         if (extras.getSerializable("tipoImagem").toString().equals("Animais")) {
-            Toast.makeText(MainActivity.this, "Escolhido animais", Toast.LENGTH_LONG).show();
             imagem1.setImageResource(R.drawable.cachorro);
             imagem2.setImageResource(R.drawable.pintinho);
             imagem3.setImageResource(R.drawable.boi);
@@ -76,7 +75,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             imagem5.setImageResource(R.drawable.porco);
             imagem6.setImageResource(R.drawable.cavalo);
         }else if (extras.getSerializable("tipoImagem").toString().equals("Comida")) {
-            Toast.makeText(MainActivity.this, "Escolhido comida", Toast.LENGTH_LONG).show();
             imagem1.setImageResource(R.drawable.brocolis);
             imagem2.setImageResource(R.drawable.morango);
             imagem3.setImageResource(R.drawable.banana);
@@ -84,7 +82,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             imagem5.setImageResource(R.drawable.maca);
             imagem6.setImageResource(R.drawable.batata);
         }else{
-            Toast.makeText(MainActivity.this, "Escolhido outros", Toast.LENGTH_LONG).show();
             imagem1.setImageResource(R.drawable.flor);
             imagem2.setImageResource(R.drawable.bola);
             imagem3.setImageResource(R.drawable.sapato);
@@ -94,41 +91,127 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
     }
 
+    public void pedirImagem(int Sorteio){
+        Bundle extras = getIntent().getExtras();
+        if (extras.getSerializable("tipoImagem").toString().equals("Animais")) {
+            switch (Sorteio) {
+                case 1:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Cachorro", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.cachorro);
+                    break;
+                case 2:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Pintinho", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.pintinho);
+                    break;
+                case 3:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Boi", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.boi);
+                    break;
+                case 4:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Gato", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.gato);
+                    break;
+                case 5:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Porco", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.porco);
+                    break;
+                case 0:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Cavalo", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.cavalo);
+                    break;
+            }
+        }else if (extras.getSerializable("tipoImagem").toString().equals("Comida")) {
+            switch (Sorteio) {
+                case 1:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Brócolis", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.brocolis);
+                    break;
+                case 2:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Morango", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.morango);
+                    break;
+                case 3:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Banana", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.banana);
+                    break;
+                case 4:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Cenoura", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.cenoura);
+                    break;
+                case 5:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Maça", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.maca);
+                    break;
+                case 0:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Batata", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.batata);
+                    break;
+            }
+        }else{
+            switch (Sorteio) {
+                case 1:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Flor", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.flores);
+                    break;
+                case 2:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Bola", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.bola);
+                    break;
+                case 3:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Sapato", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.sapato);
+                    break;
+                case 4:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Carro", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.carro);
+                    break;
+                case 5:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Relógio", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.relogio);
+                    break;
+                case 0:
+                    Toast.makeText(MainActivity.this, String.valueOf(Sorteio) + " - Balão", Toast.LENGTH_LONG).show();
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.balao);
+                    break;
+            }
+        }
+    }
+
     public void jogar(){
         Random randomico = new Random();
 
-        int numSorteio = randomico.nextInt(7);
+        int numSorteio = randomico.nextInt(6);
 
         tentativas = tentativas + 1;
 
         switch (numSorteio) {
               case 1:
-                  mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.img1);
+                  pedirImagem(numSorteio);
                   numSorteado = R.id.img1;
                   tocarSom();
                   break;
               case 2:
-                  mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.img2);
+                  pedirImagem(numSorteio);
                   numSorteado = R.id.img2;
                   tocarSom();
                   break;
               case 3:
-                  mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.img3);
+                  pedirImagem(numSorteio);
                   numSorteado = R.id.img3;
                   tocarSom();
                   break;
               case 4:
-                  mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.img4);
+                  pedirImagem(numSorteio);
                   numSorteado = R.id.img4;
                   tocarSom();
                   break;
               case 5:
-                  mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.img5);
+                  pedirImagem(numSorteio);
                   numSorteado = R.id.img5;
                   tocarSom();
                   break;
               case 0:
-                  mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.img6);
+                  pedirImagem(numSorteio);
                   numSorteado = R.id.img6;
                   tocarSom();
                   break;
